@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import BigButton from './components/BigButton/BigButton';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            player: {}
+        }
+    }
+
+    componentDidMount() {
+        fetch('https://gist.githubusercontent.com/LucasKauz/b2336ac5a7d3023f4b4ddb19ab8b965e/raw/905b9c1ea77e883f144dfef998e706709f3dddc0/fronendtest.json')
+            .then(res => res.json())
+            .then(info => this.setState({ player: info }))
+    }
+
+    render() {
+        return (
+            <div className="app">
+                {/* { this.state.player.length } */}
+                <BigButton
+                bgColor="lightblue"
+                line="10"
+                label="Hello"></BigButton>
+            </div>
+        )
+    }
 }
 
 export default App;
