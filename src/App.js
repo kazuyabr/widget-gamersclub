@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
 import './App.scss';
-import BigButton from './components/BigButton/BigButton';
+import * as PlayerAPI from './utils/api.js'
+
+// COMPONENTS
+// import GameInfo from './containers/GameInfo/GameInfo';
+import ServerBox from './containers/ServerBox/ServerBox';
+import CopyButton from './components/CopyButton/CopyButton';
+import GoButton from './components/GoButton/GoButton';
 
 class App extends Component {
 
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
         
-        this.state = {
-            player: {}
-        }
+    //     this.state = {
+    //         players: null
+    //     }
+    // }
+
+    state = {
+        playersGamesData: null,
+        playersUserData: null
     }
 
-    componentDidMount() {
-        fetch('https://gist.githubusercontent.com/LucasKauz/b2336ac5a7d3023f4b4ddb19ab8b965e/raw/905b9c1ea77e883f144dfef998e706709f3dddc0/fronendtest.json')
-            .then(res => res.json())
-            .then(info => this.setState({ player: info }))
-    }
+    componentWillMount() {
+        PlayerAPI.getAll()
+        PlayerAPI.getUser()
+            // .then(res => this.setState(() => ({ playersUserData: res })))
 
+        PlayerAPI.getServers()
+    }
+    // background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    // background-color: #ddbc39;
     render() {
         return (
             <div className="app">
-                {/* { this.state.player.length } */}
-                <BigButton
-                bgColor="lightblue"
-                line="10"
-                label="Hello"></BigButton>
+                {/* { this.state.players.latest_banned } */}
+                {/* <GameInfo mainColor="#ddbc39"></GameInfo> */}
+                <ServerBox></ServerBox>
             </div>
         )
     }
