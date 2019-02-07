@@ -5,6 +5,8 @@ import * as PlayerAPI from './utils/api.js'
 // COMPONENTS
 // import GameInfo from './containers/GameInfo/GameInfo';
 import ServerBox from './containers/ServerBox/ServerBox';
+import Topbar from './components/Topbar/Topbar';
+import Widget from './containers/Widget/Widget';
 
 class App extends Component {
 
@@ -33,9 +35,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                {/* { this.state.players.latest_banned } */}
-                {/* <GameInfo mainColor="#ddbc39"></GameInfo> */}
-                <ServerBox></ServerBox>
+                <Widget></Widget>
             </div>
         )
     }

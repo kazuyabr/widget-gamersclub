@@ -1,0 +1,11 @@
+@import '../../assets/colors.scss';
+@import '../../assets/sizes.scss';
+@import '../../assets/fonts.scss';
+
+.bottombar {
+	width: 100%;
+	height: $bottombar--height-normal;
+	border-radius: 0 0 2px 2px;
+	border: 1px solid #333548;
+	background-color: #222538;
+}
