@@ -12,6 +12,10 @@
 	background-repeat: no-repeat;
 	font-family: $font-Poppins;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 	.server-links {
 		padding: 10px 5px;
 	}
@@ -19,7 +23,7 @@
 	.server-info {
 		color: #fff;
 		font-size: 12px;
-		padding-top: 15px;
+		// padding-top: 15px;
 		padding-left: 10px;
 
 		> P {
@@ -33,5 +37,9 @@
 		p:nth-child(2) {
 			font-weight: 700;
 		}
+	}
+
+	.server-bar {
+		padding: 10px 5px;
 	}
 }

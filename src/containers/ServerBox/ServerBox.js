@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 
 // STYLE
 import './ServerBox.scss'
+
+// COMPONENTS
 import CopyButton from '../../components/CopyButton/CopyButton';
 import GoButton from '../../components/GoButton/GoButton';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
 
 class ServerBox extends Component {
 
@@ -29,7 +32,12 @@ class ServerBox extends Component {
 				</div>
 
 				{/* BOTTOM PROGRESSBAR */}
-				<div className="server-bar"></div>
+				<div className="server-bar">
+					<ProgressBar
+						mapName="de_overpass"
+						serverCapacity="16"
+						playersIn="8"></ProgressBar>
+				</div>
 			</section>
 		)
 	}

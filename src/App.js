@@ -5,8 +5,6 @@ import * as PlayerAPI from './utils/api.js'
 // COMPONENTS
 // import GameInfo from './containers/GameInfo/GameInfo';
 import ServerBox from './containers/ServerBox/ServerBox';
-import CopyButton from './components/CopyButton/CopyButton';
-import GoButton from './components/GoButton/GoButton';
 
 class App extends Component {
 
