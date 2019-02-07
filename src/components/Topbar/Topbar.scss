@@ -125,4 +125,10 @@
 			background-repeat: no-repeat;
 		}
 	}
+
+	@media screen and (max-width: $widget--width) {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 }

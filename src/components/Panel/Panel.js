@@ -5,7 +5,7 @@ import './Panel.scss'
 
 const Panel = (props) => {
 
-	let valueColor = props.color
+	let valueColor = props.mainColor
 
 	return (
 		<section className="panel">

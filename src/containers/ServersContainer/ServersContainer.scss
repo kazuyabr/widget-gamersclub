@@ -1,0 +1,25 @@
+@import '../../assets/colors.scss';
+@import '../../assets/sizes.scss';
+@import '../../assets/fonts.scss';
+
+.servers-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: $font-Teko;
+        margin: 5px 0;
+        display: flex;
+
+        div:first-child {
+            width: 26px;
+            height: 25px;
+            margin: 0 5px;
+        }
+    }
+}
