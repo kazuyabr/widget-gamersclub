@@ -3,7 +3,7 @@
 @import '../../assets/fonts.scss';
 
 .servers-container {
-    width: 43%;
+    width: 44%;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -39,9 +39,33 @@
         }
 
         @media screen and (max-width: $widget--width) {
+            height: 300px;
             display: grid;
             grid-template-columns: auto auto;
             grid-row-gap: 10px;
         }
+    }
+
+    // HORIZONTAL SCROLL CONFIG.
+    ::-webkit-scrollbar {
+        height: $scrollbar--width-normal;
+        border-radius: $scrollbar--width-normal/2;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.44);
+
+        &:hover {
+            background-color: #ffffff;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media screen and (max-width: $widget--width) {
+        width: 95%;
+        overflow-x: hidden;
     }
 }
