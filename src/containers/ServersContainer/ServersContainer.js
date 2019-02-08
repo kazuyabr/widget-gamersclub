@@ -28,11 +28,13 @@ class ServersContainer extends Component {
 		return (
             <section className="servers-container">
                 <h3><div style={this.setIcon(this.props.iconURL)}></div> {this.props.areaTitle}</h3>
-                <section className="servers-section">
-                    <ServerBox></ServerBox>
-                    <ServerBox></ServerBox>
-                    <ServerBox></ServerBox>
-                </section>
+                <ul className="servers-section">
+                    <li><ServerBox></ServerBox></li>
+                    <li><ServerBox></ServerBox></li>
+                    <li><ServerBox></ServerBox></li>
+                    <li><ServerBox></ServerBox></li>
+                    <li><ServerBox></ServerBox></li>
+                </ul>
             </section>
 		)
 	}
