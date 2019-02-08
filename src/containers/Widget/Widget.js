@@ -6,11 +6,13 @@ import './Widget.scss';
 // IMAGES
 import lobbyIcon from '../../assets/images/lobby_icon.png'
 import rankedIcon from '../../assets/images/ranked_icon.png'
+import funIcon from '../../assets/images/fun_icon.png'
 
 // COMPONENTS
 import Topbar from '../../components/Topbar/Topbar';
 import Bottombar from '../../components/BottomBar/BottomBar';
 import GamesContainer from '../GamesContainer/GamesContainer';
+import ServersContainer from '../ServersContainer/ServersContainer';
 
 class Widget extends Component {
 
@@ -21,6 +23,10 @@ class Widget extends Component {
 
 				{/* SECTION TO PRESENT SERVER BOXES AND GAMES PANELS */}
 				<section className="mid-section">
+					<ServersContainer
+						areaTitle="4fun"
+						iconURL={funIcon}></ServersContainer>
+
 					<GamesContainer
 						areaTitle="lobby"
 						color="#ddbc39"

@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import './ServersContainer.scss'
 
 // COMPONENTS
+import ServerBox from '../ServerBox/ServerBox'
 
 class ServersContainer extends Component {
 
@@ -27,7 +28,11 @@ class ServersContainer extends Component {
 		return (
             <section className="servers-container">
                 <h3><div style={this.setIcon(this.props.iconURL)}></div> {this.props.areaTitle}</h3>
-                <ServersContainer></ServersContainer>
+                <section className="servers-section">
+                    <ServerBox></ServerBox>
+                    <ServerBox></ServerBox>
+                    <ServerBox></ServerBox>
+                </section>
             </section>
 		)
 	}

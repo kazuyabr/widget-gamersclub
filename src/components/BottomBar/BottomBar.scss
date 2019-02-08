@@ -8,4 +8,36 @@
 	border-radius: 0 0 2px 2px;
 	border: 1px solid #333548;
 	background-color: #222538;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.bottom-btn {
+		width: 288px;
+		height: 34px;
+		border-radius: 3px;
+		background-color: rgba(255, 255, 255, 0.06);
+		color: #b6b8c6;
+		font-size: 14px;
+		font-weight: 400;
+		margin: 0 9.5px;
+
+		i {
+			margin-right: 10px;
+		}
+
+		span {
+			@media screen and (max-width: $widget--width) {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: $widget--width) {
+			width: 40%;
+		}
+	}
+
+	.bottom-info {
+		display: flex;
+	}
 }

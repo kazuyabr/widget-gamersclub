@@ -3,11 +3,12 @@
 @import '../../assets/fonts.scss';
 
 .servers-container {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 
     h3 {
+        width: 100%;
         color: #ffffff;
         font-size: 20px;
         font-weight: 400;
@@ -20,6 +21,18 @@
             width: 26px;
             height: 25px;
             margin: 0 5px;
+        }
+    }
+
+    .servers-section {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
+
+        @media screen and (max-width: $widget--width) {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-row-gap: 10px;
         }
     }
 }
