@@ -50,6 +50,7 @@
     ::-webkit-scrollbar {
         height: $scrollbar--width-normal;
         border-radius: $scrollbar--width-normal/2;
+        cursor: pointer;
     }
 
     ::-webkit-scrollbar-thumb {
