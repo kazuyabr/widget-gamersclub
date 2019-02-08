@@ -21,6 +21,13 @@
 		font-size: 14px;
 		font-weight: 400;
 		margin: 0 9.5px;
+		outline: none;
+		cursor: pointer;
+
+		&:active {
+			color: rgb(255, 255, 255);
+			background-color: #000000;
+		}
 
 		i {
 			margin-right: 10px;
