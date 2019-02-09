@@ -1,8 +1,14 @@
 # widget-gamersclub
 
 This widget has been developed to Gamers Club using [create-react-app](https://github.com/facebook/create-react-app).
+
 Follow the instructions bellow to setup and run the application.
+
 And please, feel free to contact me for any question :metal:
+
+First of all(after download the app, of course :unamused:), you need to install [NPM](https://www.npmjs.com/get-npm), but I recommend you to install [Node](https://nodejs.org/en/download/) instead (Node.js contains NPM by default).
+
+After this, go to app folder (root) and execute the command **npm install** (to install all project dependencies).
 
 ## Available Scripts
 
