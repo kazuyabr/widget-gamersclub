@@ -16,15 +16,16 @@ class GameInfo extends Component {
 		return (
 			<section className="game-info">
 				<div className="panes">
-					<Panel mainColor={ this.setMainColor() } value="100" label="Partidas"></Panel>
-					<Panel mainColor="#92AA00" value="100" label="Vitórias"></Panel>
-					<Panel mainColor="#FC3537" value="100" label="Derrotas"></Panel>
+					<Panel mainColor={ this.setMainColor() } value={this.props.matches} label="Partidas"></Panel>
+					<Panel mainColor="#92AA00" value={this.props.win} label="Vitórias"></Panel>
+					<Panel mainColor="#FC3537" value={this.props.lose} label="Derrotas"></Panel>
 				</div>
 				<div className="button">
 					<BigButton
 	                    bgColorTop="rgba(255, 255,255, 0.25)"
 	                    bgColorDown="rgba(255, 255, 255, 0)"
-                    	bgColor={ this.setMainColor() }
+						bgColor={ this.setMainColor() }
+						url={this.props.url}
                     	line={this.props.lineNumber}
                     	label={this.props.btnLabel}></BigButton>
 				</div>

@@ -8,7 +8,7 @@ const Bottombar = (props) => {
 
 	return (
 		<div className="bottombar">
-			<button className="bottom-btn"><i class="fas fa-download"></i> <span>Download Gamers Club Anti-Cheat</span></button>
+			<button className="bottom-btn"><i className="fas fa-download"></i> <span>Download Gamers Club Anti-Cheat</span></button>
 			<section className="bottom-info">
 				<BottomData
 					textTop="Jogadores"

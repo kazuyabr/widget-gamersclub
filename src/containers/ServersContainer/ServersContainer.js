@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import * as api from '../../utils/api'
 
 // STYLE
 import './ServersContainer.scss'
@@ -7,6 +8,14 @@ import './ServersContainer.scss'
 import ServerBox from '../ServerBox/ServerBox'
 
 class ServersContainer extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            serversState: [],
+        }
+    }
 
 	// METHOD TO TURN PROP COLOR INTO A FONTCOLOR
 	setColor = (color) => {
@@ -23,17 +32,27 @@ class ServersContainer extends Component {
             backgroundRepeat: 'no-repeat'
         }
     }
+
+    componentDidMount() {
+        console.log(this.props.serversList.length)
+    }
     
 	render() {
 		return (
             <section className="servers-container">
                 <h3><div style={this.setIcon(this.props.iconURL)}></div> {this.props.areaTitle}</h3>
                 <ul className="servers-section">
-                    <li><ServerBox></ServerBox></li>
-                    <li><ServerBox></ServerBox></li>
-                    <li><ServerBox></ServerBox></li>
-                    <li><ServerBox></ServerBox></li>
-                    <li><ServerBox></ServerBox></li>
+                    { this.props.serversList.map((item) => (
+                        <li key={item.id}>
+                            <ServerBox
+                            id={item.id}
+                            title={item.title}
+                            gameType={item.mode}
+                            map={item.map}
+                            capacity={item.max}
+                            actual={item.current}></ServerBox>
+                        </li>
+                    ))}
                 </ul>
             </section>
 		)

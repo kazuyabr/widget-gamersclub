@@ -3,25 +3,26 @@ const api = 'https://gist.githubusercontent.com/LucasKauz/b2336ac5a7d3023f4b4ddb
 
 
 export const getAll = () => {
-	fetch(api)
+	return fetch(api)
 		.then(res => res.json())
 		.then(data => data)
 }
 
 export const getGames = () => {
-	fetch(api)
+	return fetch(api)
 		.then(res => res.json())
-		.then(data => data.games)
+		.then(data => data["games"])
+		// .then(resposta => console.log(resposta))
 }
 
 export const getUser = () => {
-	fetch(api)
+	return fetch(api)
 		.then(res => res.json())
 		.then(data => data.user)
 }
 
 export const getServers = () => {
-	fetch(api)
+	return fetch(api)
 		.then(res => res.json())
 		.then(data => data['4fun'])
 }

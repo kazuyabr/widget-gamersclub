@@ -11,7 +11,7 @@ const GoButton = (props) => {
 
 	return (
 		<button className="go-button" onClick={goToLink()}>
-			<i class="fas fa-sign-out-alt"></i>
+			<i className="fas fa-sign-out-alt"></i>
 		</button>
 	)
 }

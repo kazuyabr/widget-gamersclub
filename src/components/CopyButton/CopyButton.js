@@ -11,7 +11,7 @@ const CopyButton = (props) => {
 
 	return (
 		<button className="copy-button" onClick={goToLink()}>
-			<i class="far fa-copy"></i>
+			<i className="far fa-copy"></i>
 		</button>
 	)
 }

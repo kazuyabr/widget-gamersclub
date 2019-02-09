@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import * as api from '../../utils/api'
 
 // STYLE
 import './GamesContainer.scss'
@@ -8,10 +9,11 @@ import GameInfo from '../GameInfo/GameInfo'
 
 class GamesContainer extends Component {
 
-	// METHOD TO TURN PROP COLOR INTO A FONTCOLOR
-	setColor = (color) => {
-		return color
-    }
+    // FUNCTION TO SET MAIN COLOR BY LINE NUMBER VALUE
+	setColor = () => {
+		if(typeof(this.props.lineNumber) === 'number') { return "#2788c8" }
+		else { return "#ddbc39" }
+	}
     
     // METHOD TO SET TITLE ICON BASED ON AN URL
     setIcon = (url) => {
@@ -23,7 +25,7 @@ class GamesContainer extends Component {
 			backgroundRepeat: 'no-repeat'
 		}
     }
-
+    
 	render() {
 		return (
             <section className="games-container">
@@ -31,7 +33,11 @@ class GamesContainer extends Component {
                 <GameInfo
                     btnLabel={this.props.btnLabel}
                     lineNumber={this.props.lineNumber}
-                    mainColor={this.setColor(this.props.color)}></GameInfo>
+                    win={this.props.win}
+                    lose={this.props.lose}
+                    matches={this.props.matches}
+                    url={this.props.url}
+                    mainColor={this.setColor()}></GameInfo>
             </section>
 		)
 	}
