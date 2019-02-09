@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# widget-gamersclub
+
+This widget has been developed to Gamers Club using [create-react-app](https://github.com/facebook/create-react-app).
+Follow the instructions bellow to setup and run the application.
+And please, feel free to contact me for any question :metal:
 
 ## Available Scripts
 
