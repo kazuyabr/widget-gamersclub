@@ -5,12 +5,13 @@ import './CopyButton.scss'
 
 const CopyButton = (props) => {
 
-	function goToLink(url) {
-		// window.location(props.url)
+	// FUNCTION TO OPEN AN URL ON ANOTHER TAB
+	let setURL = (url) => {
+		window.open(url, '_blank');
 	}
 
 	return (
-		<button className="copy-button" onClick={goToLink()}>
+		<button className="copy-button" onClick={() => setURL(props.url)}>
 			<i className="far fa-copy"></i>
 		</button>
 	)

@@ -5,8 +5,6 @@ import * as api from '../../utils/api'
 import './Widget.scss';
 
 // IMAGES
-// import lobbyIcon from '../../assets/images/lobby_icon.png'
-// import rankedIcon from '../../assets/images/ranked_icon.png'
 import funIcon from '../../assets/images/fun_icon.png'
 
 // COMPONENTS
@@ -21,16 +19,43 @@ class Widget extends Component {
 		super(props)
 
 		this.state = {
+			allInfo: [],
+			playerInfo: [],
+			playerInfoPosition: [],
+			playerInfoMedal: [],
 			serverInfo: [],
-			serversList: [],
 			gamesList: [],
+			serversList: [],
 		}
 	}
 
-	componentWillMount() {
+	// METHOD TO SLICE LARGE NAMES
+	slicePlayerName = (text) => {
+		if(text !== undefined)
+			if(text.length > 15) return text.slice(0, 15) + '...'
+			else return text
+	}
+
+	// METHOD TO TURN EXPERTISE LEVEL INTO A NUMBER VALUE
+	setExpertiseValue = (expertise) => {
+		if(expertise !== undefined)
+			switch(expertise) {
+				case 'casual': return 20;
+				case 'competitive': return 40;
+				case 'amateur': return 66;
+				case 'pro': return 100;
+				default: return 0;
+			}
+	}
+
+	componentDidMount() {
         api.getAll()
 			.then(res => this.setState({
-				serversInfo: res["4fun"],
+				allInfo: res,
+				playerInfo: res["user"],
+				playerInfoPosition: res["user"].game_position,
+				playerInfoMedal: res["user"].featured_medal,
+				serverInfo: res["4fun"],
 				gamesList: res["games"],
 				serversList: res["4fun"].servers }))
     }
@@ -38,16 +63,27 @@ class Widget extends Component {
     render() {
         return (
 			<div className="widget">
-				<Topbar></Topbar>
+
+				<Topbar
+					name={this.slicePlayerName(this.state.playerInfo.name)}
+					photo=""
+					id={this.state.playerInfo.id}
+					expertise={this.setExpertiseValue(this.state.playerInfo.expertise)}
+					level={this.state.playerInfo.level}
+					patentURL={this.state.playerInfo.patent}
+					positionURL={this.state.playerInfoPosition.image}
+					medalURL={this.state.playerInfoMedal.image}></Topbar>
 
 				{/* SECTION TO PRESENT SERVER BOXES AND GAMES PANELS */}
-				{/* { console.log(this.state.serversList.length) } */}
 				<section className="mid-section">
+
+					{/* LIST OF SERVERS */}
 					<ServersContainer
 						areaTitle={this.state.serverInfo.title}
 						iconURL={funIcon}
 						serversList={this.state.serversList}></ServersContainer>
 
+					{/* LIST OF GAMES ROOMS */}
 					<ul>
 						{ this.state.gamesList.map((item) => (
 							<li key={item.title}>
@@ -64,16 +100,11 @@ class Widget extends Component {
 							</li>
 						))}
 					</ul>
-
-					{/* <GamesContainer
-						areaTitle="ranked open"
-						color="#2788c8"
-						iconURL={rankedIcon}
-						btnLabel="entrar na fila"
-						lineNumber="15"></GamesContainer> */}
 				</section>
 
-				<Bottombar></Bottombar>
+				<Bottombar
+					online={this.state.allInfo.online}
+					banned={this.state.allInfo.latest_banned}></Bottombar>
 			</div>
         )
     }

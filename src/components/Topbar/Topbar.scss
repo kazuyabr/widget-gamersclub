@@ -29,8 +29,8 @@
 			.image {
 				width: 39px;
 				height: 39px;
+				border: 1px solid #fff;
 				border-radius: 50%;
-				background: #fff;
 			}
 
 			.info {
@@ -56,26 +56,80 @@
 			}
 		}
 
-		.progress {
+		.progressbar-area {
+			width: 513px;
 
-			.bar {
-				width: 513px;
-				height: 14px;
-				border-radius: 7px;
-				padding: 0 3.5px;
-				box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.41);
-				background-color: #27293c;
+			%progress-levels {
+				width: 100%;
+				height: 25px;
+				font-size: 17px;
+				font-family: $font-Teko;
+				font-weight: 400;
+				text-transform: uppercase;
+				// color: #ffffff;
+				color: rgba(255, 255, 255, 0.3);
+			}
+
+			.top-levels {
+				@extend %progress-levels;
 				display: flex;
+				justify-content: flex-start;
 				align-items: center;
 
-				div {
-					// width: 234px;
-					height: 7px;
+				> p {
+					margin-right: 35%;
+					display: flex;
+					
+					i {
+						margin-left: 5px;
+					}
+				}
+
+				p:first-child {
+					margin-left: 10%;
+				}
+			}
+
+			.bottom-levels {
+				@extend %progress-levels;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				> p {
+					margin-left: 50%;
+					display: flex;
+					
+					i {
+						margin-left: 5px;
+						transform: rotate(180deg);
+						-ms-transform: rotate(180deg);
+						-webkit-transform: rotate(180deg);
+					}
+				}
+			}
+
+			.progress {
+
+				.bar {
+					width: 100%;
+					height: 14px;
 					border-radius: 7px;
-					box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
-					background-color: #272940;
-					background-color: rgba(255, 255, 255, 0.05);
-					background-image: linear-gradient(to right, #5c3abd 0%, #77dbff 100%);
+					padding: 0 3.5px;
+					box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.41);
+					background-color: #27293c;
+					display: flex;
+					align-items: center;
+	
+					div {
+						// width: 234px;
+						height: 7px;
+						border-radius: 7px;
+						box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+						background-color: #272940;
+						background-color: rgba(255, 255, 255, 0.05);
+						background-image: linear-gradient(to right, #5c3abd 0%, #77dbff 100%);
+					}
 				}
 			}
 
@@ -99,6 +153,23 @@
 					background-size: contain;
 					background-position: center;
 					background-repeat: no-repeat;
+				}
+
+				.level-value {
+					width: 33px;
+					height: 32px;
+					border: 2px solid rgba(255, 255, 255, 0.2);
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					p {
+						font-size: 19px;
+						font-family: $font-Poppins;
+						color: #ffffff;;
+						font-weight: 500;
+					}
 				}
 			}
 

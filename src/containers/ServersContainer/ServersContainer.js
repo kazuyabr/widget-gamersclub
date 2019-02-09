@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import * as api from '../../utils/api'
 
 // STYLE
 import './ServersContainer.scss'
@@ -32,10 +31,6 @@ class ServersContainer extends Component {
             backgroundRepeat: 'no-repeat'
         }
     }
-
-    componentDidMount() {
-        console.log(this.props.serversList.length)
-    }
     
 	render() {
 		return (
@@ -45,12 +40,14 @@ class ServersContainer extends Component {
                     { this.props.serversList.map((item) => (
                         <li key={item.id}>
                             <ServerBox
-                            id={item.id}
-                            title={item.title}
-                            gameType={item.mode}
-                            map={item.map}
-                            capacity={item.max}
-                            actual={item.current}></ServerBox>
+                                id={item.id}
+                                title={item.title}
+                                gameType={item.mode}
+                                map={item.map}
+                                linkJoin={item.join}
+                                linkCopy={item.copy}
+                                capacity={item.max}
+                                actual={item.current}></ServerBox>
                         </li>
                     ))}
                 </ul>

@@ -5,12 +5,13 @@ import './GoButton.scss'
 
 const GoButton = (props) => {
 
-	function goToLink(url) {
-		// window.location(props.url)
+	// FUNCTION TO OPEN AN URL ON ANOTHER TAB
+	let setURL = (url) => {
+		window.open(url, '_blank');
 	}
 
 	return (
-		<button className="go-button" onClick={goToLink()}>
+		<button className="go-button" onClick={() => setURL(props.url)}>
 			<i className="fas fa-sign-out-alt"></i>
 		</button>
 	)
